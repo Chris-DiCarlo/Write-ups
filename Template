@@ -1,0 +1,88 @@
+#Template
+# [Lab/Module Title]
+
+**Platform**: HackTheBox / TryHackMe / Pentesting Class / Custom Lab  
+**Category**: Red Team | Blue Team | Hybrid  
+**Date Completed**: [MM-DD-YYYY]  
+**Difficulty/Time**: [Easy/Medium/Hard] — [hh:mm]  
+**Tags**: [Web], [Windows], [Privilege Escalation], [DFIR], [ATT&CK T1059], etc.
+**Link to Medium.com write up
+
+---
+
+## 1) Objective
+- What is the goal of this exercise?
+- Example: Enumerate the target, gain initial access, escalate privileges, and retrieve flags; or build detections for a simulated attack chain.
+
+---
+
+## 2) Tools Used
+- Kali, Nmap, Burp Suite, Metasploit, Hydra, Netcat, Wfuzz, Hashcat  
+- Wireshark, SIEM (Splunk/Azure Sentinel/Elastic), Cisco Talos, MITRE ATT&CK
+
+---
+
+## 3) Methodology / Steps Taken
+- Outline your process and reasoning; include commands and key outputs.
+
+Example commands:
+```bash
+nmap -sV -p- 10.10.10.5
+wfuzz -c -z file,wordlists/common.txt --hc 404 http://target/FUZZ
+```
+
+---
+
+## 4) Findings & Results
+- What did you discover or accomplish?
+- Example: Identified vulnerable Apache module → exploited RCE → captured user/root flags; or created detections that successfully triggered on TTPs.
+
+**Evidence highlights**
+- Service/version findings:
+- Exploit path / detection logic summary:
+- Credentials / artifacts recovered:
+
+---
+
+## 5) Skills Applied & Learned
+- Enumeration & service fingerprinting
+- Exploitation / PrivEsc (Linux/Windows)
+- Detection engineering (KQL/SPL/ESQL), log analysis
+- Incident handling & documentation
+- ATT&CK mapping and hypothesis-driven hunting
+
+---
+
+## 6) Lessons Learned / Teaching Points
+- Key takeaways you’d teach someone else.
+- Example bullets:
+  - Thorough enumeration before exploitation saves time.
+  - Validate findings with multiple tools.
+  - Map actions to **MITRE ATT&CK** to connect red ↔ blue perspectives.
+
+---
+
+## 7) Next Steps / Improvements
+- What would you refine, automate, or research next?
+- Example:
+  - Automate baseline enumeration with a script.
+  - Add SIEM correlation rules & dashboards for this TTP.
+  - Explore alternate exploit chains / hardening steps.
+
+---
+
+## Appendix (Optional)
+### Screenshots / Evidence
+- Place images in a folder like `images/[slug]/` and reference:
+`![Foothold shell](images/target-foothold.png)`
+
+### Commands & One-Liners
+```bash
+hydra -L users.txt -P passwords.txt ssh://10.10.10.5
+```
+
+### Detection Snippets (Optional)
+```spl
+index=prod_logs sourcetype=windows:security EventCode=4624 LogonType=3
+| stats count by src_ip user
+```
