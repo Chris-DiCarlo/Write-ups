@@ -28,8 +28,8 @@ Throughout these labs, I work with a wide range of security tools and frameworks
 
 Each lab or exercise has its own subpage. The write-ups follow a consistent format that includes objectives, methodology, tools used, skills demonstrated, and lessons learned.  
 
-- [Example Write-Up 1](./WriteUps/example1.md)  
-- [Example Write-Up 2](./WriteUps/example2.md)  
+- <a href="https://github.com/Chris-DiCarlo/Lets-Defend-Kernel-Exploit-Write-up"> Lets Defend Kernel Exploit </a>
+  
 
 *(More to come as I expand my documentation.)*  
 
